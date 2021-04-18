@@ -8,5 +8,6 @@
 cd ~
 git clone https://github.com/HiroshiHamada/BMS.git
 git clone https://github.com/kthimuo/BMS_study_ch10.git
+cd BMS_study_ch10
 ```
 
