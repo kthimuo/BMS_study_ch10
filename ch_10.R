@@ -5,8 +5,9 @@ options(mc.cores=parallel::detectCores())
 options(mc.cores=1)
 
 data <- read.csv('~/BMS/ch08/SSPI2015.csv')
-data <- data[data$Y>0 & data$Y<2500,]
+
 #年収が0または2500万以上は除外
+data <- data[data$Y>0 & data$Y<2500,]
 
 #年収を対数化する
 data$Y <- log(data$Y)
