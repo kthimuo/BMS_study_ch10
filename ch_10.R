@@ -14,8 +14,7 @@ data.ssp2015 = list(
   y = data$Y,
   N = length(data$Y),
   EDU = data$EDU,
-  FEM = data$FEM,
-  AGE = data$AGE
+  FEM = data$FEM
 )
 
 #[プロセスA]
