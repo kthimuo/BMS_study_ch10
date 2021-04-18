@@ -12,8 +12,8 @@ transformed parameters{//y0=10, n=10を仮定
 	real y0;// initial capital
   real n;// number of chance
   y0=10;n=10;
-  m = log(y0)+n*log(1)+log((1+b)/(1))*n*p;
-  s = sqrt(n*p*(1-p))*log( (1 + b )/(1));
+  m = log(y0)+log(1+b)*n*p;
+  s = sqrt(n*p*(1-p))*log(1 + b);
 }
 model {
   y ~ normal(m,s);
