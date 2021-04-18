@@ -2,7 +2,6 @@ library(rstan)
 library(bayesplot)
 
 options(mc.cores=parallel::detectCores())
-options(mc.cores=1)
 
 data <- read.csv('~/BMS/ch08/SSPI2015.csv')
 
