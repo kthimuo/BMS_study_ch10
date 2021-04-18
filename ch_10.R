@@ -20,8 +20,12 @@ data.ssp2015 = list(
   AGE = data$AGE
 )
 
-#投資に失敗しても年収は下がらないモデル
-fit1 <- stan(file='./stan/model_1.stan',pars=c('m','s','p','b'),
+#本
+fit_normal <- stan(file='~/BMS/ch10/model/model-10-1.stan',pars=c('m','s','p','b','log_lik'),
              data=data.ssp2015,seed=1234,warmup=500, iter=1500,chains = 4)
-summary(fit1)$summary[c('m[1]','s[1]','p','b'),c(1,4,8,9,10)]
+summary(fit_normal)$summary[c('m','s','p','b'),c(1,4,8,9,10)]
+#投資に失敗しても年収は下がらないモデル
+fit1 <- stan(file="./stan/model_1.stan",pars=c('m','s','p','b'),
+             data=data.ssp2015,seed=1234,warmup=500, iter=1500,chains = 4)
+summary(fit1)$summary[c('m','s','p','b'),c(1,4,8,9,10)]
 mcmc_combo(fit1, pars = c('m[1]','s[1]','p','b'))
